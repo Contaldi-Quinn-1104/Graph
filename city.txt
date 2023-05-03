@@ -1,0 +1,6 @@
+5 Reno SanFrancisco SaltLakeCity LasVegas Seattle
+4 Reno 6 SanFrancisco 13 SaltLakeCity 11 LasVegas 18 Seattle
+3 SanFrancisco 6 Reno 14 LasVegas 20 Seattle 
+3 SaltLakeCity 13 Reno  11 LasVegas 21 Seattle 
+3 LasVegas 11 Reno 14 SanFrancisco 11 SaltLakeCity  
+3 Seattle 18 Reno 20 SanFrancisco 21 SaltLakeCity
