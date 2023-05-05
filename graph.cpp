@@ -45,6 +45,15 @@ bool Graph<LabelType>::add(LabelType start, LabelType end, int edgeWeight)
     {
         Matrix[start][end] = edgeWeight;
         Matrix[end][start] = edgeWeight;
+        cout << endl<< endl;
+        for (int i =0; i < MAX; i++)
+        {
+            for(int j = 0; j < MAX; j++)
+            {
+                cout << Matrix[i][j] << " ";
+            }
+            cout << endl;
+        }
         return true;
     }
     return false;
@@ -74,11 +83,36 @@ int Graph<LabelType>::getEdgeWeight(LabelType start, LabelType end) const
 template<class LabelType>
 void Graph<LabelType>::depthFirstTraversal(LabelType start, void visit(LabelType&))
 {
-    cout << "lol" << endl;
+
 }
 
 template<class LabelType>
 void Graph<LabelType>::breadthFirstTraversal(LabelType start, void visit(LabelType&))
 {
-    cout << "lol";
+    bool found = false;
+    int NumVertices = getNumVertices();
+    int count = 0;
+    int index;
+    bool visited[MAX] = {0};
+    visited[start] = 1;
+    queue<int> erinQueue;
+    do
+    {
+        for(int j = 0; j < MAX; j++)
+        {
+            if(Matrix[start][j] > 0 && !visited[j])
+            {
+                erinQueue.push(j);
+                count++;
+                visted[j] = 1;
+                start = j;
+                //vist()
+            }
+            else
+            {
+                erinQueue.pop();
+                start = erinQueue.front();
+            }
+        }
+    } while(count != NumVertices);
 }
