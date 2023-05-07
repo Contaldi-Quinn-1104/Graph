@@ -46,6 +46,7 @@ bool Graph<LabelType>::add(LabelType start, LabelType end, int edgeWeight)
         Matrix[start][end] = edgeWeight;
         Matrix[end][start] = edgeWeight;
         cout << endl<< endl;
+        
         for (int i =0; i < MAX; i++)
         {
             for(int j = 0; j < MAX; j++)
@@ -54,6 +55,7 @@ bool Graph<LabelType>::add(LabelType start, LabelType end, int edgeWeight)
             }
             cout << endl;
         }
+        
         return true;
     }
     return false;
@@ -83,7 +85,42 @@ int Graph<LabelType>::getEdgeWeight(LabelType start, LabelType end) const
 template<class LabelType>
 void Graph<LabelType>::depthFirstTraversal(LabelType start, void visit(LabelType&))
 {
-
+    bool found = false;
+    int NumVertices = getNumVertices();
+    int count = 0;
+    int index;
+    bool visited[MAX] = {0};
+    stack<int> zyraStack;
+    do
+    {
+        for(int j = 0; j < MAX; j++)
+        {
+            if(Matrix[start][j] > 0 && !visited[j])
+            {
+                found = true;
+                zyraStack.push(j);
+                count++;
+                visited[j] = 1;
+                start = j;
+                break;
+            }
+            else
+            {
+                found = false;
+            }
+        }
+        if(found == false)
+        {
+            visit(zyraStack.top());
+            zyraStack.pop();
+            start = zyraStack.top();
+        }
+    } while(count != NumVertices);
+    while(!zyraStack.empty())
+    {
+        visit(zyraStack.top());
+        zyraStack.pop();
+    }
 }
 
 template<class LabelType>
@@ -94,25 +131,35 @@ void Graph<LabelType>::breadthFirstTraversal(LabelType start, void visit(LabelTy
     int count = 0;
     int index;
     bool visited[MAX] = {0};
-    visited[start] = 1;
-    queue<int> erinQueue;
+    queue<int> zyraQueue;
     do
     {
         for(int j = 0; j < MAX; j++)
         {
             if(Matrix[start][j] > 0 && !visited[j])
             {
-                erinQueue.push(j);
+                found = true;
+                zyraQueue.push(j);
                 count++;
-                visted[j] = 1;
+                visited[j] = 1;
                 start = j;
-                //vist()
+                break;
             }
             else
             {
-                erinQueue.pop();
-                start = erinQueue.front();
+                found = false;
             }
         }
+        if(found == false)
+        {
+            visit(zyraQueue.front());
+            zyraQueue.pop();
+            start = zyraQueue.front();
+        }
     } while(count != NumVertices);
+    while(!zyraQueue.empty())
+    {
+        visit(zyraQueue.front());
+        zyraQueue.pop();
+    }
 }
