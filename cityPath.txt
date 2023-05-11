@@ -1,0 +1,28 @@
+Reno-> SanFrancisco-> SaltLakeCity-> LasVegas-> SeattleCost: 33
+Reno-> SanFrancisco-> SaltLakeCity-> Seattle-> LasVegasCost: 36
+Reno-> SanFrancisco-> LasVegas-> SaltLakeCity-> SeattleCost: 70
+Reno-> SanFrancisco-> LasVegas-> Seattle-> SaltLakeCityCost: 53
+Reno-> SanFrancisco-> Seattle-> SaltLakeCity-> LasVegasCost: 69
+Reno-> SanFrancisco-> Seattle-> LasVegas-> SaltLakeCityCost: 49
+Reno-> SaltLakeCity-> SanFrancisco-> LasVegas-> SeattleCost: 43
+Reno-> SaltLakeCity-> SanFrancisco-> Seattle-> LasVegasCost: 42
+Reno-> SaltLakeCity-> LasVegas-> SanFrancisco-> SeattleCost: 76
+Reno-> SaltLakeCity-> LasVegas-> Seattle-> SanFranciscoCost: 49
+Reno-> SaltLakeCity-> Seattle-> SanFrancisco-> LasVegasCost: 79
+Reno-> SaltLakeCity-> Seattle-> LasVegas-> SanFranciscoCost: 53
+Reno-> LasVegas-> SanFrancisco-> SaltLakeCity-> SeattleCost: 63
+Reno-> LasVegas-> SanFrancisco-> Seattle-> SaltLakeCityCost: 79
+Reno-> LasVegas-> SaltLakeCity-> SanFrancisco-> SeattleCost: 59
+Reno-> LasVegas-> SaltLakeCity-> Seattle-> SanFranciscoCost: 69
+Reno-> LasVegas-> Seattle-> SanFrancisco-> SaltLakeCityCost: 42
+Reno-> LasVegas-> Seattle-> SaltLakeCity-> SanFranciscoCost: 36
+Reno-> Seattle-> SanFrancisco-> SaltLakeCity-> LasVegasCost: 59
+Reno-> Seattle-> SanFrancisco-> LasVegas-> SaltLakeCityCost: 76
+Reno-> Seattle-> SaltLakeCity-> SanFrancisco-> LasVegasCost: 63
+Reno-> Seattle-> SaltLakeCity-> LasVegas-> SanFranciscoCost: 70
+Reno-> Seattle-> LasVegas-> SanFrancisco-> SaltLakeCityCost: 43
+Reno-> Seattle-> LasVegas-> SaltLakeCity-> SanFranciscoCost: 33
+
+
+
+Best Possible Route: Reno-> Seattle-> LasVegas-> SaltLakeCity-> SanFrancisco Cost: 33

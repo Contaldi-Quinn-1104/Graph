@@ -1,4 +1,16 @@
 template<class LabelType>
+Graph<LabelType>::Graph()
+{
+    for (int i =0; i < MAX; i++)
+    {
+        for (int j = 0; j < MAX; j++)
+        {
+            Matrix[i][j] = -1;
+        }
+    }
+}
+
+template<class LabelType>
 int Graph<LabelType>::getNumVertices() const
 {
     bool empty = true;
@@ -45,17 +57,6 @@ bool Graph<LabelType>::add(LabelType start, LabelType end, int edgeWeight)
     {
         Matrix[start][end] = edgeWeight;
         Matrix[end][start] = edgeWeight;
-        cout << endl<< endl;
-        
-        for (int i =0; i < MAX; i++)
-        {
-            for(int j = 0; j < MAX; j++)
-            {
-                cout << Matrix[i][j] << " ";
-            }
-            cout << endl;
-        }
-        
         return true;
     }
     return false;
@@ -66,8 +67,8 @@ bool Graph<LabelType>::remove(LabelType start, LabelType end)
 {
     if( start < MAX && end < MAX)
     {
-        Matrix[start][end] = 0;
-        Matrix[end][start] = 0;
+        Matrix[start][end] = -1;
+        Matrix[end][start] = -1;
         return true;
     }
     else

@@ -15,8 +15,9 @@ template<class LabelType>
 class Graph: public GraphInterface <LabelType> 
 {
     private:
-        int Matrix [MAX][MAX] = {0};
+        int Matrix [MAX][MAX] = {-1};
     public:
+        Graph();
         int getNumVertices() const;
         int getNumEdges() const;
         bool add(LabelType start, LabelType end, int edgeWeight);
